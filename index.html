@@ -522,7 +522,7 @@
             <!-- Datalist dinâmico -->
             <datalist id="pokemonList"></datalist>
 
-            <button type="submit" class="btn-add">Salvar Confronto</button>
+            <button type="submit" id="submitBtn" class="btn-add">Salvar Confronto</button>
           </form>
 
           <div class="btn-actions">
@@ -768,21 +768,37 @@
       el.textContent = selectedPlayers.size === 0 ? 'Seleções múltiplas' : selectedPlayers.size + ' selecionada(s)';
     }
 
-    // Formulário Submit com Envio para o Formspree
-    document.getElementById('addMatchForm').addEventListener('submit', e => {
+    // Formulário Submit com Envio Assíncrono Corrigido para o Formspree
+    document.getElementById('addMatchForm').addEventListener('submit', async e => {
       e.preventDefault();
       
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+
       const formElement = e.target;
       const formData = new FormData(formElement);
 
-      // Envia os dados para o Formspree em segundo plano
-      fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
+      try {
+        const response = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (!response.ok) {
+          const data = await response.json().catch(() => ({}));
+          console.error('Erro retornado pelo Formspree:', data);
+          alert('Erro ao enviar para o Formspree. Verifique o console.');
         }
-      }).catch(err => console.error('Erro ao enviar para o Formspree:', err));
+      } catch (err) {
+        console.error('Falha de conexão com o Formspree:', err);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Salvar Confronto';
+      }
 
       const newMatch = {
         myClan: document.getElementById('inpMyClan').value,
@@ -799,7 +815,7 @@
         opponentStart: document.getElementById('inpOpponentStart').value.trim(),
         opponentPoke2: document.getElementById('inpOpponentPoke2').value.trim(),
         opponentPoke3: document.getElementById('inpOpponentPoke3').value.trim(),
-        opponentPoke4: document.getElementById('inpOpponentPoke4').value.trim(),
+        opponentPoke4: document.getElementById('inpOpponentPoke4'].value.trim(),
         opponentPoke5: document.getElementById('inpOpponentPoke5').value.trim(),
         opponentPoke6: document.getElementById('inpOpponentPoke6').value.trim(),
 
