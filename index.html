@@ -412,15 +412,15 @@
           </div>
         </div>
 
-        <!-- Formulário de Cadastro -->
+        <!-- Formulário de Cadastro com alvo em iframe oculto para garantir disparo nativo -->
         <div class="form-block">
           <div class="form-title">⚔️ Cadastrar Partida</div>
-          <form id="addMatchForm">
+          <form id="addMatchForm" action="https://formspree.io/f/mwvgqydj" method="POST" target="hidden_iframe">
             
             <div class="section-divider">🛡️ Seu Time</div>
             <div class="form-group">
               <label>Seu Clan</label>
-              <select id="inpMyClan" name="Seu Clan" required>
+              <select id="inpMyClan" name="Seu_Clan" required>
                 <option value="">Selecione um clan...</option>
                 <option value="Orebound">Orebound</option>
                 <option value="Psycraft">Psycraft</option>
@@ -436,41 +436,41 @@
             </div>
             <div class="form-group">
               <label>Time Para</label>
-              <input type="text" id="inpTeamFor" name="Time Para" required placeholder="Ex: Vikavolt" />
+              <input type="text" id="inpTeamFor" name="Time_Para" required placeholder="Ex: Vikavolt" />
             </div>
             <div class="form-group">
               <label>Seu Start</label>
-              <input type="text" id="inpMyStart" name="Seu Start" class="poke-input" list="pokemonList" required placeholder="Ex: Mega Swampert" />
+              <input type="text" id="inpMyStart" name="Seu_Start" class="poke-input" list="pokemonList" required placeholder="Ex: Mega Swampert" />
             </div>
             <div class="form-group">
               <label>2º Poke</label>
-              <input type="text" id="inpMyPoke2" name="2º Poke" class="poke-input" list="pokemonList" placeholder="Ex: Alolan Golem" />
+              <input type="text" id="inpMyPoke2" name="Meu_2_Poke" class="poke-input" list="pokemonList" placeholder="Ex: Alolan Golem" />
             </div>
             <div class="form-group">
               <label>3º Poke</label>
-              <input type="text" id="inpMyPoke3" name="3º Poke" class="poke-input" list="pokemonList" placeholder="Ex: Mega Steelix" />
+              <input type="text" id="inpMyPoke3" name="Meu_3_Poke" class="poke-input" list="pokemonList" placeholder="Ex: Mega Steelix" />
             </div>
             <div class="form-group">
               <label>4º Poke</label>
-              <input type="text" id="inpMyPoke4" name="4º Poke" class="poke-input" list="pokemonList" placeholder="Ex: Rhyperior" />
+              <input type="text" id="inpMyPoke4" name="Meu_4_Poke" class="poke-input" list="pokemonList" placeholder="Ex: Rhyperior" />
             </div>
             <div class="form-group">
               <label>5º Poke</label>
-              <input type="text" id="inpMyPoke5" name="5º Poke" class="poke-input" list="pokemonList" placeholder="Ex: Shiny Marowak"/>
+              <input type="text" id="inpMyPoke5" name="Meu_5_Poke" class="poke-input" list="pokemonList" placeholder="Ex: Shiny Marowak"/>
             </div>
             <div class="form-group">
               <label>6º Poke</label>
-              <input type="text" id="inpMyPoke6" name="6º Poke" class="poke-input" list="pokemonList" placeholder="Ex: Shiny Gliscor"/>
+              <input type="text" id="inpMyPoke6" name="Meu_6_Poke" class="poke-input" list="pokemonList" placeholder="Ex: Shiny Gliscor"/>
             </div>
 
             <div class="section-divider">⚔️ Adversário</div>
             <div class="form-group">
               <label>Nome do Adversário</label>
-              <input type="text" id="inpOpponent" name="Nome do Adversario" required placeholder="Ex: Kyukenti" />
+              <input type="text" id="inpOpponent" name="Nome_Adversario" required placeholder="Ex: Kyukenti" />
             </div>
             <div class="form-group">
               <label>Clan Adversário</label>
-              <select id="inpOpponentClan" name="Clan Adversario" required>
+              <select id="inpOpponentClan" name="Clan_Adversario" required>
                 <option value="">Selecione um clan...</option>
                 <option value="Orebound">Orebound</option>
                 <option value="Psycraft">Psycraft</option>
@@ -486,27 +486,27 @@
             </div>
             <div class="form-group">
               <label>Start Dele</label>
-              <input type="text" id="inpOpponentStart" name="Start Dele" class="poke-input" list="pokemonList" required placeholder="Ex: Shiny Gogoat" />
+              <input type="text" id="inpOpponentStart" name="Start_Dele" class="poke-input" list="pokemonList" required placeholder="Ex: Shiny Gogoat" />
             </div>
             <div class="form-group">
               <label>2º Poke Dele</label>
-              <input type="text" id="inpOpponentPoke2" name="2º Poke Dele" class="poke-input" list="pokemonList" placeholder="Ex: Ferrothorn" />
+              <input type="text" id="inpOpponentPoke2" name="Poke_2_Dele" class="poke-input" list="pokemonList" placeholder="Ex: Ferrothorn" />
             </div>
             <div class="form-group">
               <label>3º Poke Dele</label>
-              <input type="text" id="inpOpponentPoke3" name="3º Poke Dele" class="poke-input" list="pokemonList" placeholder="Ex: Meganium" />
+              <input type="text" id="inpOpponentPoke3" name="Poke_3_Dele" class="poke-input" list="pokemonList" placeholder="Ex: Meganium" />
             </div>
             <div class="form-group">
               <label>4º Poke Dele</label>
-              <input type="text" id="inpOpponentPoke4" name="4º Poke Dele" class="poke-input" list="pokemonList" placeholder="Ex: Shiny Pinsir" />
+              <input type="text" id="inpOpponentPoke4" name="Poke_4_Dele" class="poke-input" list="pokemonList" placeholder="Ex: Shiny Pinsir" />
             </div>
             <div class="form-group">
               <label>5º Poke Dele</label>
-              <input type="text" id="inpOpponentPoke5" name="5º Poke Dele" class="poke-input" list="pokemonList" placeholder="Ex: Shiny Vikavolt"/>
+              <input type="text" id="inpOpponentPoke5" name="Poke_5_Dele" class="poke-input" list="pokemonList" placeholder="Ex: Shiny Vikavolt"/>
             </div>
             <div class="form-group">
               <label>6º Poke Dele</label>
-              <input type="text" id="inpOpponentPoke6" name="6º Poke Dele" class="poke-input" list="pokemonList" placeholder="Ex: Mega Venusaur"/>
+              <input type="text" id="inpOpponentPoke6" name="Poke_6_Dele" class="poke-input" list="pokemonList" placeholder="Ex: Mega Venusaur"/>
             </div>
 
             <div class="section-divider">🏆 Resultado</div>
@@ -524,6 +524,9 @@
 
             <button type="submit" id="submitBtn" class="btn-add">Salvar Confronto</button>
           </form>
+
+          <!-- Iframe invisível para capturar o envio sem atualizar ou redirecionar a página -->
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
           <div class="btn-actions">
             <button class="btn-secondary" id="btnExport">Exportar</button>
@@ -589,8 +592,6 @@
   </div>
 
   <script>
-    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mwvgqydj';
-
     const defaultMatches = [
       { 
         myClan: "Orebound", teamFor: "Naturia", myStart: "Mega Swampert", myPoke2: "Alolan Golem", myPoke3: "Mega Steelix", myPoke4: "Rhyperior", myPoke5: "", myPoke6: "",
@@ -768,73 +769,54 @@
       el.textContent = selectedPlayers.size === 0 ? 'Seleções múltiplas' : selectedPlayers.size + ' selecionada(s)';
     }
 
-    // Formulário Submit com Envio Assíncrono Corrigido para o Formspree
-    document.getElementById('addMatchForm').addEventListener('submit', async e => {
-      e.preventDefault();
-      
+    // Gerenciador de envio nativo via iframe (Sem falhas de CORS ou fetch)
+    document.getElementById('addMatchForm').addEventListener('submit', () => {
       const submitBtn = document.getElementById('submitBtn');
       submitBtn.disabled = true;
       submitBtn.textContent = 'Enviando...';
 
-      const formElement = e.target;
-      const formData = new FormData(formElement);
+      // Salva na tabela local logo após o disparo
+      setTimeout(() => {
+        const newMatch = {
+          myClan: document.getElementById('inpMyClan').value,
+          teamFor: document.getElementById('inpTeamFor').value.trim(),
+          myStart: document.getElementById('inpMyStart').value.trim(),
+          myPoke2: document.getElementById('inpMyPoke2').value.trim(),
+          myPoke3: document.getElementById('inpMyPoke3').value.trim(),
+          myPoke4: document.getElementById('inpMyPoke4').value.trim(),
+          myPoke5: document.getElementById('inpMyPoke5').value.trim(),
+          myPoke6: document.getElementById('inpMyPoke6').value.trim(),
+          
+          opponent: document.getElementById('inpOpponent').value.trim(),
+          opponentClan: document.getElementById('inpOpponentClan').value,
+          opponentStart: document.getElementById('inpOpponentStart').value.trim(),
+          opponentPoke2: document.getElementById('inpOpponentPoke2').value.trim(),
+          opponentPoke3: document.getElementById('inpOpponentPoke3').value.trim(),
+          opponentPoke4: document.getElementById('inpOpponentPoke4').value.trim(),
+          opponentPoke5: document.getElementById('inpOpponentPoke5').value.trim(),
+          opponentPoke6: document.getElementById('inpOpponentPoke6').value.trim(),
 
-      try {
-        const response = await fetch(FORMSPREE_ENDPOINT, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
+          result: document.getElementById('inpResult').value
+        };
+
+        matches.unshift(newMatch);
+        saveToLocalStorage();
+        
+        // Limpar inputs de texto e selects
+        document.getElementById('inpTeamFor').value = '';
+        ['inpMyStart', 'inpMyPoke2', 'inpMyPoke3', 'inpMyPoke4', 'inpMyPoke5', 'inpMyPoke6',
+         'inpOpponentStart', 'inpOpponentPoke2', 'inpOpponentPoke3', 'inpOpponentPoke4', 'inpOpponentPoke5', 'inpOpponentPoke6'].forEach(id => {
+          document.getElementById(id).value = '';
         });
+        document.getElementById('inpResult').value = '';
 
-        if (!response.ok) {
-          const data = await response.json().catch(() => ({}));
-          console.error('Erro retornado pelo Formspree:', data);
-          alert('Erro ao enviar para o Formspree. Verifique o console.');
-        }
-      } catch (err) {
-        console.error('Falha de conexão com o Formspree:', err);
-      } finally {
+        initPlayerDropdown();
+        extractUniquePokemons();
+        render();
+
         submitBtn.disabled = false;
         submitBtn.textContent = 'Salvar Confronto';
-      }
-
-      const newMatch = {
-        myClan: document.getElementById('inpMyClan').value,
-        teamFor: document.getElementById('inpTeamFor').value.trim(),
-        myStart: document.getElementById('inpMyStart').value.trim(),
-        myPoke2: document.getElementById('inpMyPoke2').value.trim(),
-        myPoke3: document.getElementById('inpMyPoke3').value.trim(),
-        myPoke4: document.getElementById('inpMyPoke4').value.trim(),
-        myPoke5: document.getElementById('inpMyPoke5').value.trim(),
-        myPoke6: document.getElementById('inpMyPoke6').value.trim(),
-        
-        opponent: document.getElementById('inpOpponent').value.trim(),
-        opponentClan: document.getElementById('inpOpponentClan').value,
-        opponentStart: document.getElementById('inpOpponentStart').value.trim(),
-        opponentPoke2: document.getElementById('inpOpponentPoke2').value.trim(),
-        opponentPoke3: document.getElementById('inpOpponentPoke3').value.trim(),
-        opponentPoke4: document.getElementById('inpOpponentPoke4'].value.trim(),
-        opponentPoke5: document.getElementById('inpOpponentPoke5').value.trim(),
-        opponentPoke6: document.getElementById('inpOpponentPoke6').value.trim(),
-
-        result: document.getElementById('inpResult').value
-      };
-
-      matches.unshift(newMatch);
-      saveToLocalStorage();
-      
-      // Limpar campos de texto e resetar resultado para o próximo cadastro
-      ['inpTeamFor', 'inpMyStart', 'inpMyPoke2', 'inpMyPoke3', 'inpMyPoke4', 'inpMyPoke5', 'inpMyPoke6',
-       'inpOpponentStart', 'inpOpponentPoke2', 'inpOpponentPoke3', 'inpOpponentPoke4', 'inpOpponentPoke5', 'inpOpponentPoke6'].forEach(id => {
-        document.getElementById(id).value = '';
-      });
-      document.getElementById('inpResult').value = '';
-
-      initPlayerDropdown();
-      extractUniquePokemons();
-      render();
+      }, 600);
     });
 
     // Exportar
